@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_siswa,access_siswa,model_siswa,,1,1,1,1
+access_mapel,access_mapel,model_mapel,,1,1,1,1
+access_matematika,access_matematika,model_matematika,,1,1,1,1
+access_senibudaya,access_senibudaya,model_senibudaya,,1,1,1,1
+access_bahasaindonesia,access_bahasaindonesia,model_bahasaindonesia,,1,1,1,1

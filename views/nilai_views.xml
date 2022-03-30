@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- Add you code here -->
+        <!-- mapel tree view -->
+        <record id="mapel_view_tree" model="ir.ui.view">
+            <field name="name">Rekap Nilai Mata Pelajaran</field>
+            <field name="model">mapel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="siswa"/>
+                    <field name="kelas_id"/>
+                    <field name="n_matematika"/>
+                    <field name="n_senibudaya"/>    
+                    <field name="n_bahasaindonesia"/>    
+                </tree>
+            </field>
+        </record>
+        <!-- mapel form view -->
+        <record id="mapel_view_form" model="ir.ui.view">
+            <field name="name">Rekap Nilai Mata Pelajaran</field>
+            <field name="model">mapel</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <!-- Add your fields here -->
+                            <field name="siswa"/>
+                            <field name="kelas_id"/>
+                            <field name="n_matematika"/>
+                            <field name="n_senibudaya"/>    
+                            <field name="n_bahasaindonesia"/> 
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        
+        <!-- mapel action window -->
+        <record id="mapel_action" model="ir.actions.act_window">
+            <field name="name">Rekap Nilai Mata Pelajaran</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mapel</field>
+            <!-- <field name="context">{'search_default_gender':1}</field> -->
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="mapel_menu_act" name="Rekap Nilai" parent="eraport_menu_categ" action="mapel_action" sequence="20"/>
+    </data>
+</odoo>

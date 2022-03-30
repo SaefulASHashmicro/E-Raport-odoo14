@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+   
+        <!-- UJIAN Matematika -->
+
+        <record id="matematika_view_tree" model="ir.ui.view">
+            <field name="name">Data Matematika</field>
+            <field name="model">matematika</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="peserta"/>
+                    <field name="j_kel"/>
+                    <field name="kelas"/>
+                    <field name="uk1"/>
+                    <field name="uk2"/>
+                    <field name="uk3"/>
+                    <field name="uts"/>
+                    <field name="uas"/>
+                    <field name="total" optional="show"/>
+                    <field name="rerata" optional="show"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="matematika_view_form" model="ir.ui.view">
+            <field name="name">Matematika</field>
+            <field name="model">matematika</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="peserta"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <!-- Add your fields here -->
+                            <group string="Ulangan">
+                                <field name="uk1"/>
+                                <field name="uk2"/>
+                                <field name="uk3"/>                                
+                            </group>
+                            <group string="Ujian Semester">    
+                                <field name="uts"/>
+                                <field name="uas"/>
+                            </group>    
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- search view -->
+        <record id="matematika_view_search" model="ir.ui.view">
+            <field name="name">Matematika Search</field>
+            <field name="model">matematika</field>
+            <field name="arch" type="xml">
+                <search string="Search Description">
+                    <!-- Add your fields here -->
+                    <field name="peserta"/>
+                    <field name="j_kel"/>
+                    <field name="kelas"/>
+                    <filter string="Remidi Ulangan ke 1" name="uk1" domain="[('uk1', '&lt;=', '80')]"/>
+                    <filter string="Lulus Ulangan ke 1" name="uk1" domain="[('uk1', '&gt;=', '80')]"/>
+                    <filter string="Remidi Ulangan ke 2" name="uk2" domain="[('uk2', '&lt;=', '80')]"/>
+                    <filter string="Lulus Ulangan ke 2" name="uk2" domain="[('uk2', '&gt;=', '80')]"/>
+                    <filter string="Remidi Ulangan ke 3" name="uk3" domain="[('uk3', '&lt;=', '80')]"/>
+                    <filter string="Lulus Ulangan ke 3" name="uk3" domain="[('uk3', '&gt;=', '80')]"/>
+                    <filter string="Remidi UTS" name="uts" domain="[('uts', '&lt;=', '80')]"/>
+                    <filter string="Lulus UTS" name="uts" domain="[('uts', '&gt;=', '80')]"/>
+                    <filter string="Remidi UAS" name="uas" domain="[('uas', '&lt;=', '80')]"/>
+                    <filter string="Lulus UAS" name="uas" domain="[('uas', '&gt;=', '80')]"/>
+                    <group expand="1" string="Gender">
+                        <filter string="Laki-Laki" name = "j_kel" context="{'group_by' : 'j_kel'}"/>
+                        <filter string="Perempuan" name = "j_kel" context="{'group_by' : 'j_kel'}"/>    
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- UJIAN Seni Budaya -->
+
+        <record id="senibudaya_view_tree" model="ir.ui.view">
+            <field name="name">Data Senibudaya</field>
+            <field name="model">senibudaya</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="peserta"/>
+                    <field name="j_kel"/>
+                    <field name="kelas"/>
+                    <field name="uk1"/>
+                    <field name="uk2"/>
+                    <field name="uk3"/>
+                    <field name="uts"/>
+                    <field name="uas"/>
+                    <field name="total" optional="show"/>
+                    <field name="rerata" optional="show"/>
+                    <!-- <field name="state" widget="badge" decoration-success="state == 'lulus'" decoration-danger="state == 'remidi'"/> -->
+                </tree>
+            </field>
+        </record>
+        
+        <record id="senibudaya_view_form" model="ir.ui.view">
+            <field name="name">Seni Budaya</field>
+            <field name="model">senibudaya</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="peserta"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <!-- Add your fields here -->
+                            <group string="Ulangan">
+                                <field name="uk1"/>
+                                <field name="uk2"/>
+                                <field name="uk3"/>
+                            </group>
+                            <group string="Ujian Semester">    
+                                <field name="uts"/>
+                                <field name="uas"/>
+                            </group>    
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- search view -->
+        <record id="senibudaya_view_search" model="ir.ui.view">
+            <field name="name">Seni Budaya Search</field>
+            <field name="model">senibudaya</field>
+            <field name="arch" type="xml">
+                <search string="Search Description">
+                    <!-- Add your fields here -->
+                    <field name="peserta"/>
+                    <field name="j_kel"/>
+                    <field name="kelas"/>
+                    <filter string="Remidi Ulangan ke 1" name="uk1" domain="[('uk1', '&lt;=', '80')]"/>
+                    <filter string="Lulus Ulangan ke 1" name="uk1" domain="[('uk1', '&gt;=', '80')]"/>
+                    <filter string="Remidi Ulangan ke 2" name="uk2" domain="[('uk2', '&lt;=', '80')]"/>
+                    <filter string="Lulus Ulangan ke 2" name="uk2" domain="[('uk2', '&gt;=', '80')]"/>
+                    <filter string="Remidi Ulangan ke 3" name="uk3" domain="[('uk3', '&lt;=', '80')]"/>
+                    <filter string="Lulus Ulangan ke 3" name="uk3" domain="[('uk3', '&gt;=', '80')]"/>
+                    <filter string="Remidi UTS" name="uts" domain="[('uts', '&lt;=', '80')]"/>
+                    <filter string="Lulus UTS" name="uts" domain="[('uts', '&gt;=', '80')]"/>
+                    <filter string="Remidi UAS" name="uas" domain="[('uas', '&lt;=', '80')]"/>
+                    <filter string="Lulus UAS" name="uas" domain="[('uas', '&gt;=', '80')]"/>
+                    <group expand="1" string="Gender">
+                        <filter string="Laki-Laki" name = "j_kel" context="{'group_by' : 'j_kel'}"/>
+                        <filter string="Perempuan" name = "j_kel" context="{'group_by' : 'j_kel'}"/>    
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- UJIAN Bahasa Indonesia -->
+        
+        <record id="bahasaindonesia_view_tree" model="ir.ui.view">
+            <field name="name">Data Bahasa Indonesia</field>
+            <field name="model">bahasaindonesia</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="peserta"/>
+                    <field name="j_kel"/>
+                    <field name="kelas"/>
+                    <field name="uk1"/>
+                    <field name="uk2"/>
+                    <field name="uk3"/>
+                    <field name="uts"/>
+                    <field name="uas"/>
+                    <field name="total" optional="show"/>
+                    <field name="rerata" optional="show"/>
+                    <field name="state" widget="badge"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="bahasaindonesia_view_form" model="ir.ui.view">
+            <field name="name">Bahasa Indonesia</field>
+            <field name="model">bahasaindonesia</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="peserta"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <!-- Add your fields here -->
+                            <group string="Ulangan">
+                                <field name="uk1"/>
+                                <field name="uk2"/>
+                                <field name="uk3"/>
+                            </group>
+                            <group string="Ujian Semester">    
+                                <field name="uts"/>
+                                <field name="uas"/>
+                            </group>    
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+                <!-- search view -->
+        <record id="bahasaindonesia_view_search" model="ir.ui.view">
+            <field name="name">Bahasa Indonesia Search</field>
+            <field name="model">bahasaindonesia</field>
+            <field name="arch" type="xml">
+                <search string="Search Description">
+                    <!-- Add your fields here -->
+                    <field name="peserta"/>
+                    <field name="j_kel"/>
+                    <field name="kelas"/>
+                    <filter string="Remidi Ulangan ke 1" name="uk1" domain="[('uk1', '&lt;=', '80')]"/>
+                    <filter string="Lulus Ulangan ke 1" name="uk1" domain="[('uk1', '&gt;=', '80')]"/>
+                    <filter string="Remidi Ulangan ke 2" name="uk2" domain="[('uk2', '&lt;=', '80')]"/>
+                    <filter string="Lulus Ulangan ke 2" name="uk2" domain="[('uk2', '&gt;=', '80')]"/>
+                    <filter string="Remidi Ulangan ke 3" name="uk3" domain="[('uk3', '&lt;=', '80')]"/>
+                    <filter string="Lulus Ulangan ke 3" name="uk3" domain="[('uk3', '&gt;=', '80')]"/>
+                    <filter string="Remidi UTS" name="uts" domain="[('uts', '&lt;=', '80')]"/>
+                    <filter string="Lulus UTS" name="uts" domain="[('uts', '&gt;=', '80')]"/>
+                    <filter string="Remidi UAS" name="uas" domain="[('uas', '&lt;=', '80')]"/>
+                    <filter string="Lulus UAS" name="uas" domain="[('uas', '&gt;=', '80')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="J. Kelamin" name = "j_kel" context="{'group_by' : 'j_kel'}"/>  
+                        <filter string="Kelas" name = "kelas" context="{'group_by' : 'kelas'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- matematika action window -->
+        <record id="matematika_action" model="ir.actions.act_window">
+            <field name="name">Matematika</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">matematika</field>
+            <field name="context">{'group_by':'kelas'}</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+        <!-- senibudaya action window -->
+        <record id="senibudaya_action" model="ir.actions.act_window">
+            <field name="name">Seni Budaya</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">senibudaya</field>
+            <field name="context">{'group_by':'kelas'}</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+        <!-- bahasaindonesia action window -->
+        <record id="bahasaindonesia_action" model="ir.actions.act_window">
+            <field name="name">Bahasa Indonesia</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bahasaindonesia</field>
+            <field name="context">{'group_by':'kelas'}</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="matematika_menu_act" name="Matematika" parent="ujian_menu_categ" action="matematika_action" sequence="10"/>
+        <menuitem id="senibudaya_menu_act" name="Seni Budaya" parent="ujian_menu_categ" action="senibudaya_action" sequence="20"/>
+        <menuitem id="bahasaindonesia_menu_act" name="Bahasa Indonesia" parent="ujian_menu_categ" action="bahasaindonesia_action" sequence="30"/>
+    </data>
+</odoo>

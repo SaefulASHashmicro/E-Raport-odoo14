@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+        <menuitem id="eraport_menu_root" name="E-Raport" sequence="10"/>
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="eraport_menu_categ" name="Data dan Nilai" parent="eraport_menu_root" sequence="10"/>
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="ranking_menu_categ" name="Ranking" parent="eraport_menu_root" sequence="20"/>
+        <!-- This Menu Item Must have a parent -->
+        <menuitem id="ujian_menu_categ" name="Ujian dan Ulangan" parent="eraport_menu_root" sequence="30"/>
+
+</odoo>
